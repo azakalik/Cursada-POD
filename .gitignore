@@ -1,6 +1,29 @@
-.class
-.xml
-.lst
-.txt
+# Maven
+target/
+*.iml
+.idea/
+.idea_modules/
+.idea/workspace.xml
 
-./idea
+# IntelliJ IDEA
+out/
+*.class
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
