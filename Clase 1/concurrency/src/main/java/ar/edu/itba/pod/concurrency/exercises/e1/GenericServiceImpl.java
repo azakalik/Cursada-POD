@@ -6,7 +6,7 @@ import java.util.Optional;
 /**
  * Basic implementation of {@link GenericService}.
  */
-public  class GenericServiceImpl implements GenericService {
+public class GenericServiceImpl implements GenericService {
     private int visits = 0;
     private Queue<String> messageQueue = new LinkedList<String>();
 
@@ -40,7 +40,6 @@ public  class GenericServiceImpl implements GenericService {
         if (name == null)
             throw new NullPointerException("No one in queue");
         messageQueue.add(name);
-
     }
 
     @Override

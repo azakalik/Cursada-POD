@@ -1,12 +1,10 @@
-package ar.edu.itba.pod.concurrency.exercises.e2;
+package ar.edu.itba.pod.concurrency.exercises.e3;
 
 import ar.edu.itba.pod.concurrency.exercises.e1.GenericService;
 import ar.edu.itba.pod.concurrency.exercises.e1.GenericServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ThreadTest {
     private GenericService service;
@@ -24,10 +22,9 @@ public class ThreadTest {
                 for (int i = 0; i < 5; i++) {
                     service.addVisit();
                 }
-                System.out.println("The total visits are " + service.getVisitCount());
+                assertEquals(5, service.getVisitCount());
             }
         }
-
         Thread thread = new GenericServiceThread();
         thread.start();
     }
@@ -40,7 +37,7 @@ public class ThreadTest {
                 for (int i = 0; i < 5; i++) {
                     service.addVisit();
                 }
-                System.out.println("The total visits are " + service.getVisitCount());
+                assertEquals(5, service.getVisitCount());
             }
         }
 
@@ -54,7 +51,7 @@ public class ThreadTest {
             for (int i = 0; i < 5; i++) {
                 service.addVisit();
             }
-            System.out.println("The total visits are " + service.getVisitCount());
+            assertEquals(5, service.getVisitCount());
         });
         thread.start();
     }
