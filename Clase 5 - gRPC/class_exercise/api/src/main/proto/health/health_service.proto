@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+// import "google/protobuf/wrappers.proto";
+// import "google/protobuf/empty.proto";
+
+package health;
+
+option java_package = "ar.edu.itba.pod.grpc.health";
+option java_multiple_files = true;
+
+
+service HealthService {
+  rpc Ping(PingRequest) returns (PingResponse);
+}
+
+message PingRequest {
+
+}
+
+message PingResponse {
+  string message = 1;
+}
