@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import"google/protobuf/wrappers.proto";
+import"google/protobuf/empty.proto";
+
+package ping;
+
+option java_package = "itba.tp2_service";
+option java_multiple_files = true;
+
+
+service Tp2Service {
+  rpc Ping(google.protobuf.Empty) returns (google.protobuf.StringValue);
+  rpc Time(google.protobuf.Empty) returns (google.protobuf.StringValue);
+  rpc Echo(google.protobuf.StringValue) returns (google.protobuf.StringValue);
+  rpc Hello(google.protobuf.StringValue) returns (google.protobuf.StringValue);
+  rpc Fortune(google.protobuf.Empty) returns (google.protobuf.StringValue);
+}
