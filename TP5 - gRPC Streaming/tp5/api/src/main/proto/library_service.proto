@@ -1,0 +1,26 @@
+syntax = "proto3";
+package library;
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+service LibraryService {
+  rpc ListBooks(google.protobuf.Empty) returns (ListBooksResponse);
+  rpc LendBook(google.protobuf.StringValue) returns (LendBookResponse);
+  rpc ReturnBook(LendBookResponse) returns (google.protobuf.Empty);
+}
+
+message ListBooksResponse {
+  repeated string values = 1;
+}
+
+message LendBookResponse {
+  string isbn = 1;
+  string title = 2;
+  string date = 3;
+  message AuthorResponse {
+    string firstName = 1;
+    string lastName = 2;
+  }
+  AuthorResponse author = 4;
+}
+
